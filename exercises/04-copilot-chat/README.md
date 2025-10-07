@@ -1,4 +1,3 @@
-
 # Exercise 4: Copilot Chat Mastery (45 minutes)
 
 ## Objective
@@ -6,7 +5,7 @@ Learn to use GitHub Copilot Chat for code explanation, debugging, and optimizati
 
 ## Step 1: Basic Chat Commands (15 minutes)
 
-Open `exercises/04-copilot-chat/buggy-code.js` in VS Code
+Open [`exercises/04-copilot-chat/buggy-code.js`](./buggy-code.js) in VS Code
 
 ### Challenge 4.1: Code Explanation
 1. **Select this function:**
@@ -50,7 +49,7 @@ function calculateAverage(numbers) {
 ## Step 2: Advanced Chat Features (15 minutes)
 
 ### Challenge 4.4: Code Optimization
-Open `exercises/04-copilot-chat/complex-code.js`
+Open [`exercises/04-copilot-chat/complex-code.js`](./complex-code.js)
 
 1. **Select this inefficient function:**
 ```javascript
