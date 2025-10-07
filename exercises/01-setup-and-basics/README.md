@@ -9,11 +9,11 @@ Get familiar with GitHub Copilot's basic functionality and interface.
 2. **Check Copilot Status:**
    - Look for Copilot icon in the status bar (bottom right)
    - It should show as active (not crossed out)
-3. **Open the file:** `exercises/01-setup-and-basics/starter.js`
+3. **Open the file:** [`exercises/01-setup-and-basics/starter.js`](./starter.js)
 
 ## Step 2: Your First Copilot Suggestion (5 minutes)
 
-1. **Delete everything** in `starter.js`
+1. **Delete everything** in [`starter.js`](./starter.js)
 2. **Type this comment exactly:**
 ```javascript
 // Function to calculate the area of a circle given radius
