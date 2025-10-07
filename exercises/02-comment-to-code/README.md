@@ -1,4 +1,3 @@
-
 # Exercise 2: Comment-to-Code Magic (30 minutes)
 
 ## Objective
@@ -6,7 +5,7 @@ Learn how to write effective comments that generate high-quality code.
 
 ## Step 1: Basic Data Structures (10 minutes)
 
-Open `exercises/02-comment-to-code/challenges.js` and complete these challenges:
+Open [`exercises/02-comment-to-code/challenges.js`](./challenges.js) and complete these challenges:
 
 ### Challenge 2.1: Array Operations
 ```javascript
@@ -100,6 +99,9 @@ node exercises/02-comment-to-code/challenges.js
 1. **Error Handling:** Add comments for error handling and see how Copilot implements it
 2. **Performance:** Ask Copilot to optimize one of your functions
 3. **Documentation:** Generate JSDoc comments for your functions
+
+## 📋 Check Your Solutions
+Compare your results with the [sample solutions](./solutions/) when you're done.
 
 ## Next Step
 Move to [Exercise 3: Code Completion](../03-code-completion/README.md)
