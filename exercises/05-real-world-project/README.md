@@ -147,5 +147,3 @@ My Tasks:
 ☐ Build Task Manager API        [Delete]
 ```
 
-## Next Step
-Move to [Exercise 6: Advanced Techniques](../06-advanced-techniques/README.md)
