@@ -1,4 +1,3 @@
-
 # Exercise 3: Code Completion Mastery (30 minutes)
 
 ## Objective
@@ -6,7 +5,7 @@ Master Copilot's code completion capabilities and learn to work with partial cod
 
 ## Step 1: Function Completion (10 minutes)
 
-Open `exercises/03-code-completion/incomplete-functions.js`
+Open [`exercises/03-code-completion/incomplete-functions.js`](./incomplete-functions.js)
 
 ### Challenge 3.1: Complete the API Call
 ```javascript
@@ -145,6 +144,9 @@ function processCheckout(cart, paymentMethod) {
 1. Accept a Copilot suggestion that has a subtle bug
 2. Run the code and observe the error
 3. Use Copilot to help fix the bug
+
+## 📋 Check Your Solutions
+Compare your results with the [sample solutions](./solutions/) when you're done.
 
 ## Next Step
 Move to [Exercise 4: Copilot Chat](../04-copilot-chat/README.md)
