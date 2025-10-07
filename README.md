@@ -14,7 +14,7 @@ Welcome to the GitHub Copilot Workshop! This repository contains step-by-step ex
 
 1. **Clone this repository:**
 ```bash
-git clone https://github.com/your-username/github-copilot-workshop.git
+git clone https://github.com/umaranit/github-copilot-workshop.git
 cd github-copilot-workshop
 ```
 
@@ -32,12 +32,12 @@ npm install
 
 | Exercise | Duration | Focus Area |
 |----------|----------|------------|
-| [Exercise 1: Setup & Basics](#exercise-1) | 20 min | Getting familiar with Copilot |
-| [Exercise 2: Comment-to-Code](#exercise-2) | 30 min | Writing descriptive comments |
-| [Exercise 3: Code Completion](#exercise-3) | 30 min | Understanding Copilot patterns |
-| [Exercise 4: Copilot Chat](#exercise-4) | 45 min | Using chat features |
-| [Exercise 5: Real-World Project](#exercise-5) | 60 min | Building a complete application |
-| [Exercise 6: Advanced Techniques](#exercise-6) | 25 min | Pro tips and best practices |
+| [Exercise 1: Setup & Basics](./exercises/01-setup-and-basics/README.md) | 20 min | Getting familiar with Copilot |
+| [Exercise 2: Comment-to-Code](./exercises/02-comment-to-code/README.md) | 30 min | Writing descriptive comments |
+| [Exercise 3: Code Completion](./exercises/03-code-completion/README.md) | 30 min | Understanding Copilot patterns |
+| [Exercise 4: Copilot Chat](./exercises/04-copilot-chat/README.md) | 45 min | Using chat features |
+| [Exercise 5: Real-World Project](./exercises/05-real-world-project/README.md) | 60 min | Building a complete application |
+| [Exercise 6: Advanced Techniques](./exercises/06-advanced-techniques/README.md) | 25 min | Pro tips and best practices |
 
 ## Getting Started
 
@@ -48,3 +48,20 @@ Start with [Exercise 1: Setup & Basics](./exercises/01-setup-and-basics/README.m
 - 🆘 Raise your hand during the workshop
 - 📚 Check the [cheat sheet](./resources/cheat-sheet.md)
 - 💡 Review [best practices](./resources/best-practices.md)
+
+## Repository Structure
+
+```
+github-copilot-workshop/
+├── README.md
+├── exercises/
+│   ├── 01-setup-and-basics/
+│   ├── 02-comment-to-code/
+│   ├── 03-code-completion/
+│   ├── 04-copilot-chat/
+│   ├── 05-real-world-project/
+│   └── 06-advanced-techniques/
+├── datasets/
+├── resources/
+└── package.json
+```
