@@ -292,6 +292,51 @@ function performanceTest() {
 // performanceTest();
 
 // =============================================================================
+// CHALLENGE 4.6: TEST GENERATION PRACTICE
+// =============================================================================
+// Instructions: Select this function and ask Copilot Chat:
+// "/tests Generate comprehensive test cases for this function"
+// Then ask: "What edge cases should I test?"
+
+// Note: This function already exists above, but here's a reference for the challenge
+// You can select the analyzeNumbers function from the existing code above
+
+// =============================================================================
+// CHALLENGE 4.7: SECURITY ANALYSIS PRACTICE  
+// =============================================================================
+// Instructions: Select this function and ask Copilot Chat:
+// "Analyze this code for security vulnerabilities and input validation issues"
+
+// Simple user input processing (has security concerns)
+function processUserInput(userInput) {
+    // Direct string concatenation - potential XSS
+    const welcomeMessage = "<h1>Welcome " + userInput.name + "!</h1>";
+    
+    // No input sanitization
+    const query = "SELECT * FROM users WHERE id = " + userInput.id;
+    
+    // Eval usage - dangerous
+    if (userInput.calculation) {
+        const result = eval(userInput.calculation);
+        return { message: welcomeMessage, query: query, result: result };
+    }
+    
+    return { message: welcomeMessage, query: query };
+}
+
+// File path handling (path traversal vulnerability)
+function getFileContent(fileName) {
+    const fs = require('fs');
+    const path = './uploads/' + fileName; // No path validation
+    
+    try {
+        return fs.readFileSync(path, 'utf8');
+    } catch (error) {
+        return null;
+    }
+}
+
+// =============================================================================
 // INSTRUCTIONS FOR PARTICIPANTS
 // =============================================================================
 
@@ -309,7 +354,19 @@ HOW TO USE THIS FILE FOR OPTIMIZATION PRACTICE:
    - Ask Copilot Chat: "Please refactor this to be more readable and maintainable"
    - Ask: "What design patterns would improve this code?"
 
-3. PERFORMANCE ANALYSIS:
+3. TEST GENERATION PRACTICE:
+   - Select the analyzeNumbers function
+   - Ask: "/tests Generate comprehensive test cases for this function"
+   - Ask: "What edge cases should I test?"
+   - Implement the suggested tests
+
+4. SECURITY ANALYSIS:
+   - Select the processUserInput function
+   - Ask: "Analyze this code for security vulnerabilities and input validation issues"
+   - Ask: "How can I improve input sanitization?"
+   - Ask: "What are the security best practices for form validation?"
+
+5. PERFORMANCE ANALYSIS:
    - Select any inefficient function
    - Ask: "Analyze the performance issues in this code"
    - Ask: "What's the Big O complexity and how can it be improved?"

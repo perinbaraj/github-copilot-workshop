@@ -1,1 +1,17 @@
-
+{
+  "name": "task-manager",
+  "version": "1.0.0",
+  "description": "Simple task manager with Express API and web interface",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "keywords": ["task-manager", "express", "api", "copilot"],
+  "author": "GitHub Copilot Workshop",
+  "license": "MIT"
+}

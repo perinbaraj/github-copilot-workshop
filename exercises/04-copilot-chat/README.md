@@ -29,10 +29,10 @@ function quickSort(arr) {
 ```javascript
 function calculateAverage(numbers) {
     let sum = 0;
-    for (let i = 0; i <= numbers.length; i++) {
+    for (let i = 0; i < numbers.length; i++) {
         sum += numbers[i];
     }
-    return sum / numbers.length;
+    return sum / numbers.lenght;  // BUG: typo in 'length'
 }
 ```
 
@@ -100,53 +100,73 @@ function processUser(user) {
 2. **Ask Chat:** "Please refactor this to be more readable and maintainable"
 3. **Implement the refactored version**
 
-## Step 3: Workspace and Context Queries (15 minutes)
+## Step 3: Advanced Code Analysis (15 minutes)
 
-### Challenge 4.6: Workspace Understanding
-1. **Ask Chat:** `/workspace What functions are available in this workshop repository?`
-2. **Ask:** `/workspace How are the exercises structured?`
-3. **Ask:** `/workspace What's the main purpose of this codebase?`
+### Challenge 4.6: Test Generation
+Open [`exercises/04-copilot-chat/complex-code.js`](./complex-code.js)
 
-### Challenge 4.7: Cross-File Analysis
-1. **Ask Chat:** "Compare the sorting algorithms I've written across different exercises"
-2. **Ask:** "What's the most complex function I've created so far?"
-3. **Ask:** "Are there any security issues in my code?"
+1. **Select this function that needs testing:**
+```javascript
+function analyzeNumbers(numbers) {
+    const sum = numbers.reduce((acc, num) => acc + num, 0);
+    const max = Math.max(...numbers);
+    const min = Math.min(...numbers);
+    const even = numbers.filter(num => num % 2 === 0);
+    const odd = numbers.filter(num => num % 2 !== 0);
+    const positive = numbers.filter(num => num > 0);
+    const negative = numbers.filter(num => num < 0);
+    
+    return {
+        sum,
+        max,
+        min,
+        evenCount: even.length,
+        oddCount: odd.length,
+        positiveCount: positive.length,
+        negativeCount: negative.length,
+        average: sum / numbers.length
+    };
+}
+```
 
-### Challenge 4.8: Learning and Improvement
-1. **Ask Chat:** "What JavaScript concepts should I study based on the code I've written?"
-2. **Ask:** "How can I improve my coding style based on this workshop?"
-3. **Ask:** "What are some advanced patterns I should learn next?"
+2. **Ask Chat:** "/tests Generate comprehensive test cases for this function"
+3. **Ask:** "What edge cases should I test?"
+4. **Implement the suggested tests**
 
-## Step 4: Custom Prompts and Context
+## Step 4: Security and Code Quality Analysis
 
-### Challenge 4.9: Specific Technical Questions
-Try these advanced queries:
+### Challenge 4.7: Security Analysis
+Open [`exercises/04-copilot-chat/complex-code.js`](./complex-code.js)
 
-1. **Performance Analysis:**
-   ```
-   "Analyze the time and space complexity of all the sorting functions I've written. Which is most efficient?"
-   ```
+1. **Select this potentially vulnerable function:**
+```javascript
+function validateFormData(formData) {
+    const errors = [];
+    
+    if (!formData.firstName) {
+        errors.push({ field: 'firstName', message: 'First name is required' });
+    } else if (formData.firstName.length < 2) {
+        errors.push({ field: 'firstName', message: 'First name must be at least 2 characters' });
+    } else if (formData.firstName.length > 50) {
+        errors.push({ field: 'firstName', message: 'First name must be less than 50 characters' });
+    }
+    
+    if (!formData.email) {
+        errors.push({ field: 'email', message: 'Email is required' });
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+        errors.push({ field: 'email', message: 'Invalid email format' });
+    }
+    
+    return {
+        isValid: errors.length === 0,
+        errors: errors
+    };
+}
+```
 
-2. **Best Practices:**
-   ```
-   "Review my code for JavaScript best practices. What improvements do you suggest?"
-   ```
-
-3. **Testing Strategy:**
-   ```
-   "Create a comprehensive testing strategy for the ShoppingCart class I built"
-   ```
-
-### Challenge 4.10: Code Review Simulation
-1. **Ask Chat to review your Exercise 2 solutions:**
-   ```
-   "Please review my solutions from Exercise 2 as if you were a senior developer. Provide constructive feedback."
-   ```
-
-2. **Ask for specific improvements:**
-   ```
-   "How would you rewrite my password validation function to be more robust?"
-   ```
+2. **Ask Chat:** "Analyze this code for security vulnerabilities and input validation issues"
+3. **Ask:** "How can I improve input sanitization?"
+4. **Ask:** "What are the security best practices for form validation?"
 
 ## 💬 Chat Best Practices
 
@@ -168,8 +188,9 @@ Try these advanced queries:
 - [ ] You've used all basic chat commands (`/explain`, `/fix`, `/doc`)
 - [ ] You've successfully debugged at least 2 functions
 - [ ] You've optimized at least 1 function based on chat suggestions
+- [ ] You've generated test cases using `/tests` command
+- [ ] You've identified security vulnerabilities in code
 - [ ] You understand how to provide context for better responses
-- [ ] You've used `/workspace` queries effectively
 
 ## 🚀 Advanced Challenge
 

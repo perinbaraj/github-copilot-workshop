@@ -25,14 +25,14 @@ function quickSort(arr) {
 
 function calculateAverage(numbers) {
     let sum = 0;
-    for (let i = 0; i <= numbers.length; i++) {  // BUG: <= should be <
+    for (let i = 0; i < numbers.length; i++) {
         sum += numbers[i];
     }
-    return sum / numbers.length;
+    return sum / numbers.lenght;  // BUG: typo - 'lenght' instead of 'length'
 }
 
 // Test the buggy function (this will cause errors):
-// console.log(calculateAverage([1, 2, 3, 4, 5])); // Should be 3, but will throw error
+// console.log(calculateAverage([1, 2, 3, 4, 5])); // Should be 3, but will throw "Cannot read properties of undefined"
 
 // =============================================================================
 // ADDITIONAL BUGGY FUNCTIONS FOR PRACTICE

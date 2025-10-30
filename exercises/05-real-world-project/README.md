@@ -1,4 +1,4 @@
-# Exercise 5: Mini Task Manager with Simple UI (45 minutes)
+# Exercise 5: Mini Task Manager with Simple UI (60 minutes)
 
 ## Objective
 Build a complete task manager with both API and web interface using GitHub Copilot.
@@ -11,7 +11,39 @@ Create a Task Manager with:
 - Interactive HTML frontend
 - Real-time UI updates
 
-## Step 1: Basic Server (10 minutes)
+## Setup Instructions (5 minutes)
+
+**Before starting the challenges, complete this setup:**
+
+1. **Navigate to project directory:**
+   ```bash
+   cd exercises/05-real-world-project
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Verify setup:**
+   ```bash
+   npm ls
+   ```
+   You should see `express` and `cors` installed.
+
+4. **Project structure should look like:**
+   ```
+   exercises/05-real-world-project/
+   ├── package.json          ✅ (configured)
+   ├── src/
+   │   ├── server.js         ✅ (starter template)
+   │   └── taskStore.js      ✅ (starter template)
+   └── public/
+       ├── index.html        ✅ (starter template)
+       └── app.js            ✅ (starter template)
+   ```
+
+## Step 1: Basic Server (15 minutes)
 
 ### Challenge 5.1: Express Server Setup
 Create [`src/server.js`](./src/server.js):
@@ -25,7 +57,7 @@ Create [`src/server.js`](./src/server.js):
 // - Console logs when server starts
 ```
 
-## Step 2: Task Storage (10 minutes)
+## Step 2: Task Storage (15 minutes)
 
 ### Challenge 5.2: Task Data Management
 Create [`src/taskStore.js`](./src/taskStore.js):
@@ -52,7 +84,7 @@ Update [`src/server.js`](./src/server.js) to add API routes:
 // Include proper JSON responses and error handling
 ```
 
-## Step 4: Frontend UI (10 minutes)
+## Step 4: Frontend UI (15 minutes)
 
 ### Challenge 5.4: Task Manager Interface
 Create [`public/index.html`](./public/index.html):
@@ -111,6 +143,39 @@ curl -X POST http://localhost:3000/api/tasks \
   -H "Content-Type: application/json" \
   -d '{"title":"API Test Task","description":"Created via curl"}'
 ```
+
+## 🔧 Troubleshooting
+
+**Common Issues:**
+
+1. **Port 3000 already in use:**
+   ```bash
+   # Find and kill process using port 3000
+   netstat -ano | findstr :3000
+   taskkill /F /PID <process-id>
+   ```
+
+2. **Module not found errors:**
+   ```bash
+   # Reinstall dependencies
+   npm install
+   ```
+
+3. **CORS errors in browser:**
+   - Ensure `cors` middleware is properly configured in server.js
+   - Check browser developer console for specific errors
+
+4. **API not responding:**
+   - Check server console for error messages
+   - Verify server is running on http://localhost:3000
+   - Test API endpoints with curl first
+
+**Debug Mode:**
+Add `console.log` statements to track:
+- Server startup
+- API requests received
+- Task operations (add, update, delete)
+- Frontend API calls
 
 ## ✅ Success Criteria
 

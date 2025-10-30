@@ -1,0 +1,43 @@
+{
+  "name": "github-copilot-hackathon-week",
+  "version": "1.0.0",
+  "description": "Week-long GitHub Copilot hackathon with progressive challenges",
+  "main": "progress-tracker.js",
+  "scripts": {
+    "start": "node progress-tracker.js",
+    "test": "echo \"Run tests from individual exercise directories\" && exit 0",
+    "day1": "echo \"Starting Day 1 - Foundation\" && node exercises/01-setup-and-basics/starter.js",
+    "day2": "echo \"Starting Day 2 - Mastery\" && node exercises/02-comment-to-code/challenges.js",
+    "day3": "echo \"Starting Day 3 - Real Apps\" && cd exercises/05-real-world-project && npm start",
+    "day4": "echo \"Day 4 - Creative projects are in your choice of mini-project\"",
+    "day5": "echo \"Day 5 - Polish and present your work!\"",
+    "progress": "node progress-tracker.js",
+    "sample-data": "node resources/sample-data.js"
+  },
+  "keywords": [
+    "github",
+    "copilot",
+    "hackathon",
+    "ai",
+    "coding",
+    "workshop",
+    "learning",
+    "development"
+  ],
+  "author": "GitHub Copilot Hackathon Team",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/umaranit/github-copilot-workshop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/umaranit/github-copilot-workshop/issues"
+  },
+  "homepage": "https://github.com/umaranit/github-copilot-workshop#readme"
+}
