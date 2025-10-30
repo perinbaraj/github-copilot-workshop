@@ -37,7 +37,7 @@ npm install
 | [Exercise 3: Code Completion](./exercises/03-code-completion/README.md) | 30 min | Understanding Copilot patterns |
 | [Exercise 4: Copilot Chat](./exercises/04-copilot-chat/README.md) | 45 min | Using chat features |
 | [Exercise 5: Real-World Project](./exercises/05-real-world-project/README.md) | 60 min | Building a complete application |
-| [Exercise 6: Advanced Techniques](./exercises/06-advanced-techniques/README.md) | 25 min | Pro tips and best practices |
+
 
 ## Getting Started
 
