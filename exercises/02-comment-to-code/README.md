@@ -100,8 +100,5 @@ node exercises/02-comment-to-code/challenges.js
 2. **Performance:** Ask Copilot to optimize one of your functions
 3. **Documentation:** Generate JSDoc comments for your functions
 
-## 📋 Check Your Solutions
-Compare your results with the [sample solutions](./solutions/) when you're done.
-
 ## Next Step
 Move to [Exercise 3: Code Completion](../03-code-completion/README.md)
