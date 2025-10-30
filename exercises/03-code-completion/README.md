@@ -145,8 +145,6 @@ function processCheckout(cart, paymentMethod) {
 2. Run the code and observe the error
 3. Use Copilot to help fix the bug
 
-## 📋 Check Your Solutions
-Compare your results with the [sample solutions](./solutions/) when you're done.
 
 ## Next Step
 Move to [Exercise 4: Copilot Chat](../04-copilot-chat/README.md)
