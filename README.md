@@ -1,6 +1,6 @@
 # GitHub Copilot Hands-On Workshop
 
-Welcome to the GitHub Copilot Workshop! This repository contains step-by-step exercises to help you master AI-powered coding.
+Welcome to the GitHub Copilot Challenge ! This repository contains step-by-step exercises to help you master AI-powered coding.
 
 ## Prerequisites
 
@@ -14,7 +14,7 @@ Welcome to the GitHub Copilot Workshop! This repository contains step-by-step ex
 
 1. **Clone this repository:**
 ```bash
-git clone https://github.com/umaranit/github-copilot-workshop.git
+git clone https://github.com/perinbaraj/github-copilot-workshop.git
 cd github-copilot-workshop
 ```
 
