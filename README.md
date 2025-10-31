@@ -60,7 +60,6 @@ github-copilot-workshop/
 │   ├── 03-code-completion/
 │   ├── 04-copilot-chat/
 │   ├── 05-real-world-project/
-│   └── 06-advanced-techniques/
 ├── datasets/
 ├── resources/
 └── package.json
