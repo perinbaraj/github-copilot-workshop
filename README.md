@@ -37,11 +37,19 @@ npm install
 | [Exercise 3: Code Completion](./exercises/03-code-completion/README.md) | 30 min | Understanding Copilot patterns |
 | [Exercise 4: Copilot Chat](./exercises/04-copilot-chat/README.md) | 45 min | Using chat features |
 | [Exercise 5: Real-World Project](./exercises/05-real-world-project/README.md) | 60 min | Building a complete application |
+| [Exercise 6 (Bonus): Advanced Copilot — Custom Agents, Skills & MCP](./exercises/06-advanced-copilot-agents/README.md) | 90 min | 🧪 *Advanced:* custom agents, skills & Playwright MCP |
 
 
 ## Getting Started
 
 Start with [Exercise 1: Setup & Basics](./exercises/01-setup-and-basics/README.md)
+
+### 🧪 Advanced Track (optional)
+
+Already comfortable with the basics? After Exercise 5, try the bonus
+[Exercise 6: Advanced Copilot — Custom Agents, Skills & MCP](./exercises/06-advanced-copilot-agents/README.md).
+It orchestrates an end-to-end feature with a **custom Copilot agent**, a reusable **skill**,
+and the **Playwright MCP server** for real-browser UI verification — all locally in VS Code.
 
 ## Need Help?
 
@@ -60,6 +68,7 @@ github-copilot-workshop/
 │   ├── 03-code-completion/
 │   ├── 04-copilot-chat/
 │   ├── 05-real-world-project/
+│   ├── 06-advanced-copilot-agents/   # 🧪 Bonus: custom agents, skills & Playwright MCP
 ├── datasets/
 ├── resources/
 └── package.json
