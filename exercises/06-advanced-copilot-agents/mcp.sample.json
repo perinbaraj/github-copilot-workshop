@@ -1,0 +1,9 @@
+{
+  "// HOW TO USE": "Copy this file to <repo-root>/.vscode/mcp.json (create the .vscode folder if needed) and remove the comment keys. This registers the Playwright MCP server so Copilot (agent mode) can drive a real browser. Requires: npx playwright install.",
+  "servers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    }
+  }
+}
