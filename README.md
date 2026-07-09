@@ -7,14 +7,14 @@ Welcome to the GitHub Copilot Challenge ! This repository contains step-by-step 
 ✅ **Before you start, ensure you have:**
 - GitHub Copilot license activated
 - VS Code installed with GitHub Copilot extension
-- Node.js installed (version 16+)
+- Node.js installed (version 20+)
 - Git installed and configured
 
 ## Quick Setup
 
 1. **Clone this repository:**
 ```bash
-git clone https://github.com/perinbaraj/github-copilot-workshop.git
+git clone https://github.com/abhi-singhs/github-copilot-workshop.git
 cd github-copilot-workshop
 ```
 
@@ -62,14 +62,13 @@ and the **Playwright MCP server** for real-browser UI verification — all local
 ```
 github-copilot-workshop/
 ├── README.md
+├── package.json
 ├── exercises/
 │   ├── 01-setup-and-basics/
 │   ├── 02-comment-to-code/
 │   ├── 03-code-completion/
 │   ├── 04-copilot-chat/
 │   ├── 05-real-world-project/
-│   ├── 06-advanced-copilot-agents/   # 🧪 Bonus: custom agents, skills & Playwright MCP
-├── datasets/
-├── resources/
-└── package.json
+│   └── 06-advanced-copilot-agents/   # 🧪 Bonus: custom agents, skills & Playwright MCP
+└── resources/                        # cheat sheet, best practices & sample data
 ```

@@ -3,18 +3,22 @@
 #
 # HOW TO USE: Copy this file to the repository root as
 #   .github/agents/task-feature.agent.md
-# (remove the ".sample" suffix). VS Code Copilot will make this custom agent
-# available in Chat (agent mode). Field names may evolve with the extension —
-# adjust the front matter to match your installed Copilot Chat version.
+# (remove the ".sample" suffix). VS Code makes this custom agent available in
+# the agent picker in Chat. The same custom agent can be reused in background
+# (Copilot CLI) and cloud agents. Tool IDs may evolve with the extension —
+# adjust the front matter to match your installed version (see the tools picker).
 name: Task Feature Builder
 description: >-
   Builds and verifies end-to-end features for the Task Manager app (Exercise 5),
   from data model through API and UI, and confirms them in a real browser.
 tools:
-  - edit          # create/modify files
-  - search        # read and search the workspace
-  - runCommands   # run npm/node/test commands
-  - playwright    # Playwright MCP browser tools (navigate, snapshot, click, screenshot)
+  - edit             # create/modify files
+  - search/codebase  # read and search the workspace
+  - search/usages    # find references/usages
+  - runCommands      # run npm/node/test commands
+  - playwright/*     # all Playwright MCP browser tools (navigate, snapshot, click, screenshot)
+# Optional: add `handoffs` here to suggest a next agent (e.g. hand off to a
+# code-review agent) once a feature is built. See the VS Code custom agents docs.
 ---
 
 # Role

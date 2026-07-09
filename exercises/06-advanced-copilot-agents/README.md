@@ -21,8 +21,8 @@ browser → fix → re-verify* — mostly from Copilot Chat in **agent mode**.
 
 ✅ **Before you start, ensure you have:**
 - A completed, working **Exercise 5** Task Manager app (`exercises/05-real-world-project`)
-- **VS Code** with the latest **GitHub Copilot** & **Copilot Chat** extensions (agent mode enabled)
-- **Node.js 16+** and `npm`
+- **VS Code** with the latest **GitHub Copilot** & **Copilot Chat** extensions (Agent mode enabled)
+- **Node.js 20+** and `npm`
 - Ability to run `npx playwright install` (downloads browser binaries locally)
 - A terminal where you can run the Exercise 5 server (`node src/server.js`)
 
@@ -51,7 +51,8 @@ browser → fix → re-verify* — mostly from Copilot Chat in **agent mode**.
    │   ├── agents/
    │   │   └── task-feature.agent.sample.md        → copy to <repo>/.github/agents/task-feature.agent.md
    │   └── skills/
-   │       └── task-crud.skill.sample.md           → copy to <repo>/.github/skills/task-crud.skill.md
+   │       └── task-crud/
+   │           └── SKILL.sample.md                 → copy to <repo>/.github/skills/task-crud/SKILL.md
    ├── mcp.sample.json                             → copy to <repo>/.vscode/mcp.json
    └── tests/
        └── ui.spec.sample.js                       → reference solution for your Playwright test
@@ -75,7 +76,7 @@ agent request follows your conventions automatically. They live at
 3. Tailor it to the Task Manager: coding conventions, the file layout
    (`src/taskStore.js`, `src/server.js`, `public/index.html`, `public/app.js`), and the
    rule **"always add or update tests for behavior changes."**
-4. Open Copilot Chat and ask `@workspace what conventions should I follow in this repo?` —
+4. Open Copilot Chat and ask `what conventions should I follow in this repo? #codebase` —
    confirm it echoes your instructions.
 
 > ✅ **Checkpoint:** Copilot's answers now reflect your project rules without you
@@ -87,7 +88,8 @@ agent request follows your conventions automatically. They live at
 
 A **custom agent** is a named, purpose-built assistant with a defined role, an allowed
 toolset, and guardrails — more focused and repeatable than ad-hoc chat. In VS Code you
-define one in `.github/agents/<name>.agent.md`.
+define one in `.github/agents/<name>.agent.md` (these were previously called *custom chat
+modes*). The same custom agent can also be reused in background (Copilot CLI) and cloud agents.
 
 > 🧭 **Local vs. cloud:** This is the **VS Code (local) custom agent** capability. It is
 > distinct from the **cloud Copilot coding agent** that runs on GitHub.com and opens PRs.
@@ -102,23 +104,26 @@ define one in `.github/agents/<name>.agent.md`.
    - **Scope:** only the Exercise 5 app files.
    - **Allowed tools:** editing, running tests, and the Playwright MCP browser tools.
    - **Guardrails:** keep changes minimal, always add tests, verify in the browser before declaring done.
-4. In Copilot Chat, switch to **agent mode** and select/invoke your custom agent.
+4. In Copilot Chat, select your custom agent from the **agent picker** and invoke it.
 5. Give it a warm-up task: *"Summarize the current Task data model and the API routes."*
 
 > ✅ **Checkpoint:** The agent responds in its defined role and understands the codebase.
 
 ---
 
-## Step 3: Author a Reusable Skill (15 minutes)
+## Step 3: Author a Reusable Agent Skill (15 minutes)
 
-A **skill** is packaged, repeatable instructions your agent can call — a reliable recipe
-for a common workflow. Here the skill encodes *how to add a full CRUD feature slice* to the
-Task Manager so every feature is implemented consistently.
+An **Agent Skill** is a folder of packaged, repeatable instructions (and optionally scripts
+and examples) that Copilot loads on demand when a task matches the skill's description. It's
+an [open standard](https://agentskills.io) that works the same across VS Code, the Copilot
+CLI, and the cloud agent. A skill lives in `.github/skills/<name>/SKILL.md`. Here the skill
+encodes *how to add a full CRUD feature slice* to the Task Manager so every feature is
+implemented consistently.
 
 ### Challenge 6.3: Create the `task-crud` skill
 
-1. Open [`.github/skills/task-crud.skill.sample.md`](./.github/skills/task-crud.skill.sample.md).
-2. Copy it to `.github/skills/task-crud.skill.md`.
+1. Open [`.github/skills/task-crud/SKILL.sample.md`](./.github/skills/task-crud/SKILL.sample.md).
+2. Copy it to `.github/skills/task-crud/SKILL.md` (the folder name must match the skill `name`).
 3. Read the contract it defines:
    - **Data model:** extend the task object in `src/taskStore.js`.
    - **API surface:** validate/accept new fields in `src/server.js` routes.
@@ -234,18 +239,25 @@ These all run **locally in VS Code** against your local clone — no GitHub host
 Great for repos that aren't on GitHub.
 
 - **Agent mode** in Copilot Chat — multi-step, tool-using automation on the local repo.
-- **Custom agents & chat modes** — purpose-built assistants (like the one you built above).
+- **Plan agent & handoffs** — draft a structured plan, then hand off to an implementation
+  or code-review agent with one click.
+- **Custom agents** — purpose-built assistants with their own tools and instructions
+  (formerly called *custom chat modes*), like the one you built above.
 - **`.github/copilot-instructions.md`** — project-wide custom instructions.
-- **Reusable prompt files** (`*.prompt.md`) and **skills** — packaged, repeatable workflows.
+- **Reusable prompt files** (`*.prompt.md`) and **Agent Skills** (`.github/skills/<name>/SKILL.md`,
+  an open standard) — packaged, repeatable workflows.
 - **More MCP servers locally** — register additional servers in `.vscode/mcp.json`, e.g.:
   - **Filesystem** — scoped file access
   - **Git** — local history/blame/diff context
   - **SQLite / database** — query a local DB
   - **Fetch** — pull in web content
   - **Playwright** — browser automation (used in this exercise)
-- **Context tools** — `@workspace` / `#codebase`, and reference files/symbols with `#`.
+- **Context tools** — `#codebase` to pull in workspace context, and reference files/symbols with `#`.
 - **Slash commands** — `/explain`, `/fix`, `/tests`, `/doc` in chat and inline chat.
-- **Copilot Edits (multi-file editing)** — coordinated refactors across files.
+- **Multi-file edits** — done in **Agent mode** (the standalone *Copilot Edits* / *Edit mode*
+  is deprecated).
+- **Hooks & agent plugins** — run commands at lifecycle events, or install pre-packaged
+  customization bundles.
 - **Model selection** — switch models in the chat model picker for different tasks.
 - **Next Edit Suggestions (NES)** — predicts your next edit as you type.
 - **Copilot in the terminal / CLI** — command suggestions and explanations locally.

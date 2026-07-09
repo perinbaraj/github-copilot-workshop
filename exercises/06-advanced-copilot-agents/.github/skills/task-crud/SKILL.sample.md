@@ -1,14 +1,26 @@
 ---
-# Reusable Skill definition (SAMPLE)
+# Agent Skill definition (SAMPLE)
 #
-# HOW TO USE: Copy this file to the repository root as
-#   .github/skills/task-crud.skill.md
-# (remove the ".sample" suffix). Invoke it from the custom agent, e.g.
-# "Using the task-crud skill, add priority and dueDate to tasks."
+# HOW TO USE: Agent Skills are folders containing a SKILL.md file (an open
+# standard — see https://agentskills.io). Copy this folder to the repository
+# root as:
+#   .github/skills/task-crud/SKILL.md
+# (rename SKILL.sample.md -> SKILL.md). The skill loads automatically when a
+# task matches its description, and you can invoke it explicitly with the
+# `/task-crud` slash command, e.g. "Using the task-crud skill, add priority
+# and dueDate to tasks."
+#
+# NOTES:
+# - `name` must be lowercase letters/numbers/hyphens and match the parent
+#   folder name (task-crud). No dots, slashes, or namespace prefixes.
+# - A skill folder can also bundle scripts, templates, and examples that the
+#   agent uses; reference them from this file with relative Markdown links.
+# - The same skill works across VS Code, GitHub Copilot CLI, and the cloud agent.
 name: task-crud
 description: >-
   Add a complete CRUD feature slice to the Task Manager: extend the data model,
-  wire the API, update the UI, and verify with Playwright.
+  wire the API, update the UI, and verify with Playwright. Use when adding a new
+  task attribute (e.g. priority, dueDate) or a filter/sort/dashboard capability.
 ---
 
 # Skill: Add a CRUD feature slice to the Task Manager
