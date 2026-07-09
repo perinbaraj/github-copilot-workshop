@@ -54,6 +54,7 @@ and the **Playwright MCP server** for real-browser UI verification — all local
 ## Need Help?
 
 - 🆘 Raise your hand during the workshop
+- 📊 Present or follow along with the [workshop slides](./resources/github-copilot-workshop.pptx) (PowerPoint)
 - 📚 Check the [cheat sheet](./resources/cheat-sheet.md)
 - 💡 Review [best practices](./resources/best-practices.md)
 
@@ -70,5 +71,5 @@ github-copilot-workshop/
 │   ├── 04-copilot-chat/
 │   ├── 05-real-world-project/
 │   └── 06-advanced-copilot-agents/   # 🧪 Bonus: custom agents, skills & Playwright MCP
-└── resources/                        # cheat sheet, best practices & sample data
+└── resources/                        # slides, cheat sheet, best practices & sample data
 ```
