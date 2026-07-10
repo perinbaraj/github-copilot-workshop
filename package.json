@@ -1,17 +1,17 @@
 {
-  "name": "github-copilot-hackathon-week",
+  "name": "github-copilot-workshop",
   "version": "1.0.0",
-  "description": "Week-long GitHub Copilot hackathon with progressive challenges",
-  "main": "progress-tracker.js",
+  "description": "Hands-on GitHub Copilot workshop with progressive exercises",
   "scripts": {
-    "start": "node progress-tracker.js",
+    "start": "echo \"GitHub Copilot Workshop — start with exercises/01-setup-and-basics/README.md\"",
     "test": "echo \"Run tests from individual exercise directories\" && exit 0",
     "day1": "echo \"Starting Day 1 - Foundation\" && node exercises/01-setup-and-basics/starter.js",
     "day2": "echo \"Starting Day 2 - Mastery\" && node exercises/02-comment-to-code/challenges.js",
     "day3": "echo \"Starting Day 3 - Real Apps\" && cd exercises/05-real-world-project && npm start",
     "day4": "echo \"Day 4 - Creative projects are in your choice of mini-project\"",
     "day5": "echo \"Day 5 - Polish and present your work!\"",
-    "progress": "node progress-tracker.js",
+    "day6": "echo \"Bonus - Advanced Copilot: custom agents, skills & Playwright MCP\" && echo \"See exercises/06-advanced-copilot-agents/README.md\"",
+    "bonus": "echo \"See exercises/06-advanced-copilot-agents/README.md\"",
     "sample-data": "node resources/sample-data.js"
   },
   "keywords": [
@@ -30,14 +30,14 @@
     "nodemon": "^3.0.1"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=20.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/umaranit/github-copilot-workshop.git"
+    "url": "https://github.com/abhi-singhs/github-copilot-workshop.git"
   },
   "bugs": {
-    "url": "https://github.com/umaranit/github-copilot-workshop/issues"
+    "url": "https://github.com/abhi-singhs/github-copilot-workshop/issues"
   },
-  "homepage": "https://github.com/umaranit/github-copilot-workshop#readme"
+  "homepage": "https://github.com/abhi-singhs/github-copilot-workshop#readme"
 }
